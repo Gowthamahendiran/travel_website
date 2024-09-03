@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 
 const cityData = {
   Leh: {
@@ -269,72 +270,76 @@ const cityData = {
   }
   
 };
+
 export default function DashboardOne() {
-    const [selectedCity, setSelectedCity] = useState('Srinagar'); // Default city
-    
-    const city = cityData[selectedCity] || cityData['Srinagar']; // Fallback to default city data
+  const [selectedCity, setSelectedCity] = useState('Srinagar'); // Default city
   
-    return (
-      <div className="min-h-[200vh] py-12">
-        <h2 className="justify-center flex mb-4 text-4xl font-extrabold">Explore Popular Cities</h2>
-        <p className="flex justify-center mb-7 text-black text-lg md:text-l">
-          Discover the best cities in the world to explore and live in right now, according to Time Out's global survey of city-dwellers
-        </p>
-        <div className="justify-center flex space-x-4 mb-10">
-          {Object.keys(cityData).map((cityName) => (
-            <button
-              key={cityName}
-              onClick={() => setSelectedCity(cityName)}
-              className={`w-36 rounded-md px-1 py-2 font-bold shadow-lg transition duration-300 ease-in-out ${
-                selectedCity === cityName ? 'bg-yellow-500' : 'bg-yellow-400 hover:bg-yellow-500'
-              }`}
-            >
-              {cityName}
-            </button>
-          ))}
-        </div>
-  
-        <div className="relative flex flex-col items-center">
-          <img
-            src={city.image}
-            alt={selectedCity}
-            className="mb-10 mt-10 rounded-md"
-            width={1000}
-          />
-  
-          <div className="absolute bottom-20 transform translate-y-1/2 w-1/2 bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-            <h3 className="text-2xl font-bold mb-2">{selectedCity}</h3>
-            <p className="text-lg text-gray-700">
-              {city.description}
-            </p>
-          </div>
-        </div>
-  
-        {/* Famous Places Section */}
-        <div className="mt-12">
-          <h3 className="text-3xl font-extrabold mb-4 text-center">Famous Places in {selectedCity}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-            {city.famousPlaces.map((place, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img
-                  src={place.image}
-                  alt={place.title}
-                  className="w-full h-40 object-cover"
-                />
-                <div className="p-4">
-                  <h4 className="text-xl font-semibold mb-4">{place.title}</h4>
-                  <p className="text-gray-700 mb-1"><strong>Duration:</strong> {place.duration}</p>
-                  <p className="text-gray-700 mb-1"><strong>Family Plan:</strong> {place.familyPlan}</p>
-                  <p className="text-gray-700 mb-1"><strong>Rating:</strong> {place.rating}</p>
-                  <p className="text-gray-700 mb-2"><strong>Price:</strong> {place.price}</p>
-                  <button className="w-full bg-yellow-400 text-black font-bold py-2 rounded-md shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out">
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+  const city = cityData[selectedCity] || cityData['Srinagar']; // Fallback to default city data
+
+  return (
+    <div className="min-h-[200vh] py-12">
+      <h2 className="justify-center flex mb-4 text-4xl font-extrabold">Explore Popular Cities</h2>
+      <p className="flex justify-center mb-7 text-black text-lg md:text-l">
+        Discover the best cities in the world to explore and live in right now, according to Time Out's global survey of city-dwellers
+      </p>
+      <div className="justify-center flex space-x-4 mb-10">
+        {Object.keys(cityData).map((cityName) => (
+          <button
+            key={cityName}
+            onClick={() => setSelectedCity(cityName)}
+            className={`w-36 rounded-md px-1 py-2 font-bold shadow-lg transition duration-300 ease-in-out ${
+              selectedCity === cityName ? 'bg-yellow-500' : 'bg-yellow-400 hover:bg-yellow-500'
+            }`}
+          >
+            {cityName}
+          </button>
+        ))}
+      </div>
+
+      <div className="relative flex flex-col items-center">
+        <Image
+          src={city.image}
+          alt={selectedCity}
+          className="mb-10 rounded-md"
+          width={1000}
+          height={600}
+        />
+
+        <div className="absolute bottom-0 transform translate-y-1/2 w-1/2 bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
+          <h3 className="text-2xl font-bold mb-2">{selectedCity}</h3>
+          <p className="text-lg text-gray-700">
+            {city.description}
+          </p>
         </div>
       </div>
-    );
-  }
+
+      {/* Famous Places Section */}
+      <div className="mt-12">
+        <h3 className="text-3xl font-extrabold mb-4 text-center">Famous Places in {selectedCity}</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+          {city.famousPlaces.map((place, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <Image
+                src={place.image}
+                alt={place.title}
+                className="w-full h-40 object-cover"
+                width={500}  // Add width
+  height={200} // Add height
+              />
+              <div className="p-4">
+                <h4 className="text-xl font-semibold mb-4">{place.title}</h4>
+                <p className="text-gray-700 mb-1"><strong>Duration:</strong> {place.duration}</p>
+                <p className="text-gray-700 mb-1"><strong>Family Plan:</strong> {place.familyPlan}</p>
+                <p className="text-gray-700 mb-1"><strong>Rating:</strong> {place.rating}</p>
+                <p className="text-gray-700 mb-2"><strong>Price:</strong> {place.price}</p>
+                <button className="w-full bg-yellow-400 text-black font-bold py-2 rounded-md shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out">
+                  Book Now
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
