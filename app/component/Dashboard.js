@@ -80,7 +80,7 @@ const cityData = {
   },
   Srinagar: {
     image: "https://hblimg.mmtcdn.com/content/hubble/img/destimgjune2022/mmt/activities/m_Srinagar%204_l_679_1437.jpg",
-    description: "Jahangir's 'heaven on earth’, Srinagar offers the picturesque Dal Lake, breath-taking mountain views, stunning Mughal gardens and sprawling orchards.",
+    description: "Jahangirs heaven on earth, Srinagar offers the picturesque Dal Lake, breath-taking mountain views, stunning Mughal gardens and sprawling orchards.",
     famousPlaces: [
         {
           image: "https://hblimg.mmtcdn.com/content/hubble/img/srinagar/mmt/activities/t_ufs/m_activities_srinagar_mughal_garden_l_400_640.jpg",
@@ -156,7 +156,7 @@ const cityData = {
   },
   Goa: {
     image: "https://hblimg.mmtcdn.com/content/hubble/img/goakolkatadestimages/mmt/activities/m_Goa_4_l_667_1000.jpg", 
-    description: "Popularly known as India’s party capital, Goa seduces travellers from all around the globe with its boho beaches, ancient churches, majestic forts and unbeatable nightlife!",
+    description: "Popularly known as Indias party capital, Goa seduces travellers from all around the globe with its boho beaches, ancient churches, majestic forts and unbeatable nightlife!",
     famousPlaces: [
         {
           image: "https://hblimg.mmtcdn.com/content/hubble/img/goa/mmt/activities/t_ufs/m_Fort%20Aguada_6_l_436_654.jpg",
@@ -232,7 +232,7 @@ const cityData = {
   },
   Ooty: {
     image: "https://hblimg.mmtcdn.com/content/hubble/img/ooty/mmt/destination/m_destination-ooty-landscape_l_400_640.jpg", 
-    description: "Officially called Ootacamund, the hill-town is better known by its nickname–Ooty. It is loved by Bollywood directors, honeymooners, families, and even backpackers, for its mountains, lakes, gardens, and waterfalls.",
+    description: "Officially called Ootacamund, the hill-town is better known by its nicknameOoty. It is loved by Bollywood directors, honeymooners, families, and even backpackers, for its mountains, lakes, gardens, and waterfalls.",
     famousPlaces: [
         {
           image: "https://hblimg.mmtcdn.com/content/hubble/img/ooty/mmt/activities/t_ufs/m_activities_ooty_Botanical%20Garden_l_286_508.jpg",
